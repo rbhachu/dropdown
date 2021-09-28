@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Hurme Geometric Sans 3';
+  src: url("../fonts/Hurme-Geometric-Sans-3-W03-Rg.eot");
+  src: url("../fonts/Hurme-Geometric-Sans-3-W03-Rg.eot?#iefix") format("embedded-opentype"), 
+  url("../fonts/Hurme-Geometric-Sans-3-W03-Rg.woff2") format("woff2"), 
+  url("../fonts/Hurme-Geometric-Sans-3-W03-Rg.woff") format("woff"), 
+  url("../fonts/Hurme-Geometric-Sans-3-W03-Rg.ttf") format("truetype"), 
+  url("../fonts/Hurme-Geometric-Sans-3-W03-Rg.svg#Hurme-Geometric-Sans-3") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0; 
+  font-family: 'Hurme Geometric Sans 3', sans-serif; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #eceff1;
+  color: #000;
+}

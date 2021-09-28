@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# React Select Dropdown (Reusable Component) Documentaion & Testing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Reusable Select Dropdown made with React, SASS and Storybook support for interaction and testing.
+<br>
+Live Link: [Dropdown](https://upbeat-bhaskara-9ce05d.netlify.app/).
+<br><br>
 
-## Available Scripts
+## Run
+REACT APP: `npm install, npm start`<br>
+![Example1](./src/readme/example1.png)
 
-In the project directory, you can run:
+OR<br>
+Storybook: `npm install, npm run storybook`
+![Example2](./src/readme/example2.png)
+<br><br>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage
+To use drop down component, import and declare props.<br>
+````js
+import Data from './data/assignes.json' // JSON datafile path
+import Dropdown from './stories/Dropdown'; // dropdown reusable component
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+const Datafile = Data; // JSON datafile
 
-### `npm test`
+<Dropdown 
+    Datafile={Datafile}
+    DatafileNameValue='name'
+    ButtonID='button-person'
+    SelectLabelID='person'
+    SelectLabelText='ASSIGN ITEM:'
+    SelectMaxSize={10}
+    InputPlaceHolderText='Search for a user'
+    SelectColourBG='pink'
+/>
+````
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Component Prop Options
+| Prop Name       | Description           | Default  | Type  |
+| ------------- |:-------------:| -----:| -----:|
+| Datafile | JSON File to use | {Datafile} | `JSON File` |
+| DatafileNameValue | value in JSON file for name | 'name' | `string` |
+| ButtonID | Button ID | 'button-person' | `string` |
+| SelectLabelID | Select and Select Label ID | 'person' | `string` |
+| SelectLabelText | Select Label innner html | 'ASSIGN ITEM:' | `string` |
+| SelectMaxSize | Max list size to enable scrolling | {10} | `int` |
+| InputPlaceHolderText | Input placeholder default text | 'Search for a user' | `string` |
+| SelectColourBG | Selected option Bg color value, can be color name (pink) or hex value (#CCC) | 'pink' | `string` |
+<br><br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Storybook
+Storybook contains 3 dropdown types;<br><br>
+<b>Primary</b>: uses full JSON list of 13 names to show scroll and input filter<br>
+<b>Secondary</b>: uses short JSON list of 5 names with no scroll or input filter<br>
+<b>Third</b>: shows short list with names value defined as 'person' in JSON list.<br>
+![Dropdowns](./src/readme/storybook1.png)
+<br><br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Story Book Accessibility Tab<br>
+You can review the accesibily tests for the dropdown by selecting the Accessibility tab
+![Dropdowns](./src/readme/storybook2.png)
+<br><br>
 
-### `npm run eject`
+### Storybook Canva Tab Bug<br>
+There is bug when viewing the dropdown in the `Canva Tab`, whereby you need to double click to confirm your selected option. This is bug and the dropdown works fine if you use the `Docs tab` to view and run the dropdown instead or if you run the dropdown via `npm start`
+![Canva Bug](./src/readme/storybook3.png)
+<br><br>
+Use the `Docs Tab` to accurately view the dropdown and interact with it.
+![Docs Tab](./src/readme/storybook4.png)
+<br><br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Testing
+run `npm test` to perform testing<br>
+Test to ensure page renders by checking if h2 title element loads in page. 
+![Test](./src/readme/test1.png)
+<br><br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Other Testing
 
-## Learn More
+[HTML Validation](https://validator.w3.org/nu/?doc=https://upbeat-bhaskara-9ce05d.netlify.app/)
+![HTML Validation](./src/readme/html-validation.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[CSS Validation](https://jigsaw.w3.org/css-validator/validator?profile=css3&warning=0&uri=https://upbeat-bhaskara-9ce05d.netlify.app/)
+![CSS Validation](./src/readme/css-validation.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Accessibility Validation](https://wave.webaim.org/report#/https://upbeat-bhaskara-9ce05d.netlify.app/)
+![Accessibility Validation](./src/readme/accessibility-validation.png)
 
-### Code Splitting
+Lighthouse Validation (Desktop/Mobile)
+![Lighthouse Validation](./src/readme/lighthouse-validation.png)
+<br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Created By
+Author: Rishi Bhachu<br>
+Contact: mr_bhachu@hotmail.com

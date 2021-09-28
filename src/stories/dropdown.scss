@@ -1,0 +1,114 @@
+
+$border-color: #ccc;
+$font-weight: 700;
+
+.dropdown {
+  width: 100%;
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  label, button, input, select {
+    text-align: left;
+    width: 100%;
+  }
+
+  button {
+    padding: 0.5em 0.5em 0.5em 0.75em;
+    margin: 0.7em 0 0.5em 0;
+    font-weight: $font-weight;
+    color: #FFF;
+    border-radius: 4px;
+    border: 2px solid #426001;
+    background-color: #426001;
+    background-image: url(./assets/up-down-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position: 97% 50%;
+    box-shadow: 0px 2px 2px 0 rgb(0 0 0 / 20%); // browser default bg colour overvide fix
+  }
+
+  // select dd closed state
+  .select-wrapper-close {
+    display: none;
+  }
+
+  // select dd open state
+  .select-wrapper-open {
+    display: block;
+    animation: fadeIn 0.5s;
+
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    border: 2px solid $border-color;
+    box-shadow: 0px 2px 2px 0 rgb(0 0 0 / 20%);
+
+    .input-wrapper {
+      padding: 0.5em;
+      border-bottom: 1px solid $border-color;
+    }
+
+    input {
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      padding: 0.5em 0.5em 0.5em 0.75em;
+
+      &::placeholder {
+        font-family: Arial, Helvetica, sans-serif;
+        color: $border-color;
+      }
+
+      &:hover { 
+        box-shadow: 0 0 10px 100px yellow inset;
+      }
+
+    }
+
+    // hide form label elements for input and select
+    .hide-element {
+      display: none;
+    }
+
+    select {
+      border: none;
+
+      // hide scroll when less than 10 items in select
+      &.hide-scroll {
+        overflow: hidden !important;
+      }
+
+      option {
+        padding: 0.5em 0.5em 0.5em 0.75em;
+        border-top: 1px solid $border-color;
+
+        &:checked { 
+          box-shadow: 0 0 10px 100px white inset; // hides browser default #ccc for first option
+        }
+
+        &:hover { 
+          box-shadow: 0 0 10px 100px yellow inset;
+        }
+
+        // hide top border for 1st option fix
+        &.top-option {
+          border-top: none !important;
+        }
+
+      }
+
+    }
+
+    .error-message {
+      color: red;
+    }
+
+  }
+  // fade in div animation
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+}
